@@ -8,6 +8,22 @@ importers:
 
   .:
     dependencies:
+      consola:
+        specifier: ^3.4.2
+        version: 3.4.2
+      h3:
+        specifier: ^1.15.3
+        version: 1.15.3
+      mri:
+        specifier: ^1.2.0
+        version: 1.2.0
+      ofetch:
+        specifier: ^1.4.1
+        version: 1.4.1
+      zod:
+        specifier: ^3.25.28
+        version: 3.25.28
+    devDependencies:
       '@cyansalt/eslint-config':
         specifier: ^4.3.1
         version: 4.3.1(@babel/core@7.27.1)(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.32.1(eslint@9.27.0(jiti@2.4.2))(typescript@5.8.3))(eslint@9.27.0(jiti@2.4.2)))(eslint@9.27.0(jiti@2.4.2))(typescript@5.8.3)
@@ -20,21 +36,9 @@ importers:
       '@types/node':
         specifier: ^22.15.21
         version: 22.15.21
-      consola:
-        specifier: ^3.4.2
-        version: 3.4.2
       eslint:
         specifier: ^9.27.0
         version: 9.27.0(jiti@2.4.2)
-      h3:
-        specifier: ^1.15.3
-        version: 1.15.3
-      mri:
-        specifier: ^1.2.0
-        version: 1.2.0
-      ofetch:
-        specifier: ^1.4.1
-        version: 1.4.1
       release-it:
         specifier: ^19.0.2
         version: 19.0.2(@types/node@22.15.21)
@@ -44,9 +48,6 @@ importers:
       unbuild:
         specifier: ^3.5.0
         version: 3.5.0(typescript@5.8.3)
-      zod:
-        specifier: ^3.25.28
-        version: 3.25.28
 
 packages:
 

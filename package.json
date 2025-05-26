@@ -34,19 +34,21 @@
     "url": "https://github.com/CyanSalt/openai-ollama/issues"
   },
   "homepage": "https://github.com/CyanSalt/openai-ollama#readme",
-  "dependencies": {
+  "devDependencies": {
     "@cyansalt/eslint-config": "^4.3.1",
     "@cyansalt/tsconfig": "^2.2.1",
     "@release-it/conventional-changelog": "^10.0.1",
     "@types/node": "^22.15.21",
-    "consola": "^3.4.2",
     "eslint": "^9.27.0",
+    "release-it": "^19.0.2",
+    "typescript": "^5.8.3",
+    "unbuild": "^3.5.0"
+  },
+  "dependencies": {
+    "consola": "^3.4.2",
     "h3": "^1.15.3",
     "mri": "^1.2.0",
     "ofetch": "^1.4.1",
-    "release-it": "^19.0.2",
-    "typescript": "^5.8.3",
-    "unbuild": "^3.5.0",
     "zod": "^3.25.28"
   }
 }

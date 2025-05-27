@@ -46,7 +46,7 @@ Alternatively, you can configure **most** options through environment variables,
 Supported options are as follows:
 
 - `apiKey`: (Required) API key for OpenAI compatible backends. Defaults to `OPENAI_API_KEY` environment variable.
-- `baseURL`: Base URL for OpenAI compatible backends. Defaults to `OPENAI_BASE_URL` environment variable or `https://api.openai.com/v1`
+- `baseURL`: Base URL for OpenAI compatible backends. Defaults to `OPENAI_API_BASE` or `OPENAI_BASE_URL` environment variable, or `https://api.openai.com/v1`
 - `models`: Specifies the list of available models. The list of models will be obtained through the OpenAI compatible API (`/models`) if not specified, which is not supported by some backends.
   - Elements in `models` are objects with the following properties, or the `id` property of the object.
     - `id`: Unique ID of the model.

@@ -43,7 +43,7 @@ async function main() {
   }
   const backend = prepare({
     apiKey,
-    baseURL: config.baseURL ?? process.env.OPENAI_BASE_URL,
+    baseURL: config.baseURL ?? process.env.OPENAI_API_BASE ?? process.env.OPENAI_BASE_URL,
     models: config.models,
   })
 

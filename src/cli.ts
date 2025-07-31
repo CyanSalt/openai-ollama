@@ -5,6 +5,7 @@ import { colors } from 'consola/utils'
 import mri from 'mri'
 import type { BackendOptions, ServerOptions } from '.'
 import { prepare, serve } from '.'
+import { pathToFileURL } from 'node:url'
 
 export interface CLIOptions extends Partial<Pick<ServerOptions, 'port'>> {
   'config-file'?: string,
@@ -15,8 +16,10 @@ export type Config = Partial<BackendOptions> & Partial<ServerOptions>
 async function resolveConfig(options: CLIOptions) {
   const configFile = options['config-file']
   if (configFile) {
+    const absolutePath = path.resolve(configFile)
+    const fileURL = pathToFileURL(absolutePath).href
     const { default: config } = await import(
-      path.resolve(configFile),
+      fileURL,
       { with: { type: 'json' } }
     ) as { default: Config }
     return config

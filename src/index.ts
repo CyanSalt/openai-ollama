@@ -3,6 +3,7 @@ import type { App } from 'h3'
 import { createApp, createRouter, defineEventHandler, getHeaders, readBody, readValidatedBody, toNodeListener } from 'h3'
 import { ofetch } from 'ofetch'
 import { z } from 'zod'
+import { OpenAIOllamaStream } from './transform'
 
 export interface ModelObject {
   id: string,
@@ -98,6 +99,28 @@ export function prepare(options: BackendOptions): Backend {
         })
         return response
       }),
+  )
+
+  router.use(
+    '/api/chat',
+    defineEventHandler(async (event) => {
+      const body = await readBody(event)
+      const model = modelObjects?.find(
+        item => item.id === body.model || item.name === body.model,
+      )?.id ?? body.model
+      const response = await ofetch(`${prefix}/chat/completions`, {
+        method: event.method,
+        headers: {
+          authorization: `Bearer ${apiKey}`,
+        },
+        body: {
+          ...body,
+          model,
+        },
+        responseType: 'stream',
+      })
+      return response.pipeThrough(new OpenAIOllamaStream() as never)
+    }),
   )
 
   router.post(

@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import path from 'node:path'
+import { pathToFileURL } from 'node:url'
 import { consola } from 'consola'
 import { colors } from 'consola/utils'
 import mri from 'mri'
@@ -16,7 +17,7 @@ async function resolveConfig(options: CLIOptions) {
   const configFile = options['config-file']
   if (configFile) {
     const { default: config } = await import(
-      path.resolve(configFile),
+      pathToFileURL(path.resolve(configFile)).href,
       { with: { type: 'json' } }
     ) as { default: Config }
     return config

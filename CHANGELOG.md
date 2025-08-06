@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.0-beta.4](https://github.com/CyanSalt/openai-ollama/compare/v0.1.0-beta.3...v0.1.0-beta.4) (2025-08-06)
+
+### Bug Fixes
+
+* win32 path ([0bd26cb](https://github.com/CyanSalt/openai-ollama/commit/0bd26cb1c201ecbaf2f14b11eb51d2ef7a2e6479))
+
 ## [0.1.0-beta.3](https://github.com/CyanSalt/openai-ollama/compare/v0.1.0-beta.2...v0.1.0-beta.3) (2025-07-31)
 
 ### Features

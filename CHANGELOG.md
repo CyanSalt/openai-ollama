@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.0-beta.5](https://github.com/CyanSalt/openai-ollama/compare/v0.1.0-beta.4...v0.1.0-beta.5) (2025-09-12)
+
+### Bug Fixes
+
+* api/show ([2fab427](https://github.com/CyanSalt/openai-ollama/commit/2fab4277ab067e8f206cbe1232e51b6333be18fe))
+* ignore body on get apis ([f5a8545](https://github.com/CyanSalt/openai-ollama/commit/f5a854585a8b607fdcbf8e2f41db6447d1805f3e))
+
 ## [0.1.0-beta.4](https://github.com/CyanSalt/openai-ollama/compare/v0.1.0-beta.3...v0.1.0-beta.4) (2025-08-06)
 
 ### Bug Fixes

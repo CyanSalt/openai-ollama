@@ -88,14 +88,12 @@ export function prepare(options: BackendOptions): Backend {
         }
       })
       : defineEventHandler(async event => {
-        const body = await readBody(event)
         const response = await ofetch(`${prefix}/models`, {
           method: event.method,
           headers: {
             ...getHeaders(event),
             Authorization: `Bearer ${apiKey}`,
           },
-          body,
         })
         return response
       }),
@@ -200,16 +198,14 @@ export function prepare(options: BackendOptions): Backend {
         }
       })
       : defineEventHandler(async event => {
-        const body = await readBody(event)
         const response = await ofetch(`${prefix}/models`, {
           method: event.method,
           headers: {
             ...getHeaders(event),
             Authorization: `Bearer ${apiKey}`,
           },
-          body,
         })
-        const { data } = response.data
+        const data = response.data
         return {
           models: data.map(model => ({
             model: model.id,

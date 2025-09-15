@@ -46,6 +46,7 @@
   },
   "dependencies": {
     "consola": "^3.4.2",
+    "eventsource-parser": "^3.0.6",
     "h3": "^1.15.3",
     "mri": "^1.2.0",
     "ofetch": "^1.4.1",

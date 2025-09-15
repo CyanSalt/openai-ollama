@@ -1,9 +1,11 @@
 import { createServer } from 'node:http'
+import { TextDecoderStream } from 'node:stream/web'
+import { EventSourceParserStream } from 'eventsource-parser/stream'
 import type { App } from 'h3'
 import { createApp, createRouter, defineEventHandler, getHeaders, readBody, readValidatedBody, toNodeListener } from 'h3'
 import { ofetch } from 'ofetch'
 import { z } from 'zod'
-import { OpenAIOllamaStream } from './transform'
+import { JSONLineStream, OpenAIOllamaStream } from './transform'
 
 export interface ModelObject {
   id: string,
@@ -117,7 +119,11 @@ export function prepare(options: BackendOptions): Backend {
         },
         responseType: 'stream',
       })
-      return response.pipeThrough(new OpenAIOllamaStream() as never)
+      return response
+        .pipeThrough(new TextDecoderStream() as TransformStream)
+        .pipeThrough(new EventSourceParserStream())
+        .pipeThrough(new OpenAIOllamaStream())
+        .pipeThrough(new JSONLineStream())
     }),
   )
 

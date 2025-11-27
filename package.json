@@ -8,7 +8,7 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "require": "./dist/index.js"
+      "default": "./dist/index.js"
     }
   },
   "bin": "./dist/cli.js",
@@ -17,7 +17,7 @@
   ],
   "scripts": {
     "lint": "eslint --fix './**/*.{js,ts}'",
-    "prepack": "unbuild",
+    "prepack": "tsdown",
     "release": "release-it --preRelease=beta --npm.tag=latest"
   },
   "repository": {
@@ -41,8 +41,8 @@
     "@types/node": "^22.15.21",
     "eslint": "^9.27.0",
     "release-it": "^19.0.2",
-    "typescript": "^5.8.3",
-    "unbuild": "^3.5.0"
+    "tsdown": "^0.16.7",
+    "typescript": "^5.8.3"
   },
   "dependencies": {
     "consola": "^3.4.2",

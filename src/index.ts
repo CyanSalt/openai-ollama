@@ -231,7 +231,7 @@ export function prepare(options: BackendOptions): Backend {
             Authorization: `Bearer ${apiKey}`,
           },
         })
-        const data = response.data
+        const data: ModelObject[] = response.data
         return {
           models: data.map(model => getModelBasicInfo(model)),
         }

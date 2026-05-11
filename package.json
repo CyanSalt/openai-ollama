@@ -55,21 +55,21 @@
     ]
   },
   "devDependencies": {
-    "@cyansalt/eslint-config": "^4.3.1",
-    "@cyansalt/tsconfig": "^3.0.0",
-    "@release-it/conventional-changelog": "^10.0.1",
-    "@types/node": "^22.15.21",
-    "eslint": "^9.27.0",
-    "release-it": "^19.0.2",
-    "tsdown": "^0.16.7",
-    "typescript": "^5.8.3"
+    "@cyansalt/eslint-config": "^4.6.0",
+    "@cyansalt/tsconfig": "^3.0.2",
+    "@release-it/conventional-changelog": "^11.0.0",
+    "@types/node": "^24.12.3",
+    "eslint": "^10.3.0",
+    "release-it": "^20.0.1",
+    "tsdown": "^0.22.0",
+    "typescript": "^5.9.3"
   },
   "dependencies": {
     "consola": "^3.4.2",
-    "eventsource-parser": "^3.0.6",
-    "h3": "^1.15.3",
+    "eventsource-parser": "^3.0.8",
+    "h3": "^1.15.11",
     "mri": "^1.2.0",
-    "ofetch": "^1.4.1",
-    "zod": "^3.25.28"
+    "ofetch": "^1.5.1",
+    "zod": "^4.4.3"
   }
 }
